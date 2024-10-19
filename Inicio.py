@@ -19,13 +19,23 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
-    st.write("**[Nombre del Integrante 1]**")
+    st.write("**[SARA ]**")
     st.write("[Rol en el proyecto]")
 
 with col2:
     st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
-    st.write("**[Nombre del Integrante 2]**")
+    st.write("**[MIGUEL ]**")
     st.write("[Rol en el proyecto]")
+
+with col1:
+    st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
+    st.write("**[ALEX ]**")
+    st.write("[Rol en el proyecto]")  
+
+with col2:
+    st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
+    st.write("**[JOHNNY LONDOÑO ]**")
+    st.write("[Rol en el proyecto]")   
 
 # Descripción del proyecto
 st.header("Sobre el Proyecto")

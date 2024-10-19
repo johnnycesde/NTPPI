@@ -196,6 +196,15 @@ with tab_Análisis_Exploratorio:
     * Muestra una tabla con la frecuencia de valores únicos para una columna categórica seleccionada. **(df['columna_categorica'].value_counts())** 
     * Otra información importante  
     """)
+
+    # Obtener datos de una colección de Firestore
+    users = db.collection('usuarios').stream()
+    # Convertir datos a una lista de diccionarios
+    users_data = [doc.to_dict() for doc in users]
+    # Crear DataFrame
+    df_users = pd.DataFrame(users_data)
+
+    st.dataframe(df_users.describe())
     
 #----------------------------------------------------------
 #Analítica 2
