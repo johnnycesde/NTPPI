@@ -19,17 +19,17 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
-    st.write("**[SARA ]**")
+    st.write("**[SARA LOPERA]**")
     st.write("[Rol en el proyecto]")
 
 with col2:
     st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
-    st.write("**[MIGUEL ]**")
+    st.write("**[MIGUEL ROLDAN]**")
     st.write("[Rol en el proyecto]")
 
 with col1:
     st.image("./static/user.png", width=200)  # Reemplaza con la ruta de la foto
-    st.write("**[ALEX ]**")
+    st.write("**[ALEXANDER HERNANDEZ]**")
     st.write("[Rol en el proyecto]")  
 
 with col2:
@@ -38,9 +38,9 @@ with col2:
     st.write("[Rol en el proyecto]")   
 
 # Descripción del proyecto
-st.header("Sobre el Proyecto")
+st.header("RESERVAS DE SALAS DE ESTUDIO")
 st.write("""
-[Escribe aquí una breve descripción del proyecto, incluyendo el objetivo principal, la problemática que aborda y el enfoque que se utiliza. Puedes ser creativo y usar un lenguaje atractivo.]
+[La aplicación "Reserva de Salones de Estudio" facilita la organización y gestión de espacios de estudio, ofreciendo a los usuarios la posibilidad de reservar salones de manera rápida y eficiente. El objetivo principal es optimizar el uso de estos espacios, eliminando conflictos por disponibilidad y brindando una experiencia ágil y cómoda para estudiantes y profesionales. Aborda el problema de la falta de coordinación en la asignación de salones, permitiendo consultar la disponibilidad en tiempo real y realizar reservas con un solo clic. El enfoque se basa en una interfaz intuitiva y amigable, diseñada para facilitar la navegación y mejorar la experiencia del usuario..]
 """)
 
 # Más información
