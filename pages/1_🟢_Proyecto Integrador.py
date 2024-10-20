@@ -35,7 +35,8 @@ with tad_descripcion:
 
     ### Introducción
 
-    -   ¿Qué es el proyecto intrg?  
+    -   ¿Qué es el proyecto intregrador? 
+                RESERVAS DE SALAS DE ESTUDIO 
                 
     -   ¿Cuál es el objetivo principal?
                 

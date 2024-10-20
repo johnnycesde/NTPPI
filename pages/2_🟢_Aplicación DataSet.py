@@ -21,6 +21,7 @@ with tad_descripcion:
     ### Introducción
 
     -   ¿Qué es el proyecto?
+                RESERVAS DE SALAS DE ESTUDIO
     -   ¿Cuál es el objetivo principal?
     -   ¿Por qué es importante?
 
@@ -55,7 +56,10 @@ with tab_Análisis_Exploratorio:
     
 #----------------------------------------------------------
 #Analítica 2
-#----------------------------------------------------------
+#def
+# ----------------------------------------------------------
+def analisis_exploratorio(df):
+ def = pd.read_csv()     
 with tab_Filtrado_Básico:
         st.title("Filtro Básico")
         st.markdown("""
