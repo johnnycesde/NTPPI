@@ -35,9 +35,10 @@ with tad_descripcion:
 
     ### Introducción
 
-    -   ¿Qué es el proyecto?  
+    -   ¿Qué es el proyecto intrg?  
                 
     -   ¿Cuál es el objetivo principal?
+                
     -   ¿Por qué es importante?
 
     ### Desarrollo
