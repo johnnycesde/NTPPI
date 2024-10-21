@@ -1,3 +1,4 @@
+
 import random
 from faker import Faker
 import streamlit as st 
@@ -76,7 +77,7 @@ with tab_Generador:
         for _ in range(n):
             user = {
                 'nombre': fake.name(),
-                'email': fake.email(),
+                'edad': fake.edad(),
                 'edad': random.randint(18, 80),
                 'ciudad': random.choice(ciudades_colombianas)
             }
@@ -231,5 +232,3 @@ with tab_Filtro_Final_Dinámico:
         * Incluye información como los criterios de filtrado aplicados, la tabla de datos filtrados, gráficos y estadísticas relevantes.
         * Se actualiza automáticamente cada vez que se realiza un filtro en las pestañas anteriores. 
         """)
-
-
