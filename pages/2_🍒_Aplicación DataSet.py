@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from faker import Faker
+from faker import Faker # type: ignore
 import random
 
 st.set_page_config(layout="wide")
@@ -77,7 +77,7 @@ def generate_fake_usuarios(n):
 fake_users = []  # Inicializa la variable antes de usarla
 
 if st.button("Generar Usuarios"):
-         fake_users = generate_fake_usuarios(num_users)
+         fake_users = generate_fake_usuarios(num_users) # type: ignore
          
 # Crear el DataFrame y mostrar datos generados
 df_fake = pd.DataFrame(fake_users)
