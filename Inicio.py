@@ -5,8 +5,8 @@ st.set_page_config(layout="wide", page_title="Mapping Demo", page_icon="🌍")
 
 
 # Título y subtítulo
-st.title("Proyecto Integrador: [Nombre del Proyecto]")
-st.subheader("Un Viaje Creativo con [Nombre del Equipo]")
+st.title("Proyecto Integrador: RESERVAS")
+st.subheader("Un Viaje Creativo con EL EQUIPO RESERVAS")
 
 # Imagen de fondo
 image = Image.open("./static/proyecto integrador.png") 
