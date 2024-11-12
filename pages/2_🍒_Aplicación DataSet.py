@@ -1,46 +1,99 @@
 import streamlit as st
 import pandas as pd
+from faker import Faker
+import random
 
 st.set_page_config(layout="wide")
 
 st.subheader("Análisis y Filtrado de Datos")
+# Cargar el archivo CSV
 
-df = pd.read_csv('./static/datasets/ventas.csv')
+df = pd.read_csv('C:/Users/Johny/Desktop/base/reserva_salas_estudio_60_usuarios.csv')
 
 
-tad_descripcion, tab_Análisis_Exploratorio, tab_Filtrado_Básico, tab_Filtro_Final_Dinámico = st.tabs(["Descripción", "Análisis Exploratorio", "Filtrado Básico", "Filtro Final Dinámico"])
+# Crear pestañas
+tab_descripcion, tab_Análisis_Exploratorio, tab_Filtrado_Básico, tab_Filtro_Final_Dinámico, tab_Generador = st.tabs(["Descripción", "Análisis Exploratorio", "Filtrado Básico", "Filtro Final Dinámico", "Generador"])
+
 
 #----------------------------------------------------------
 #Generador de datos
 #----------------------------------------------------------
-with tad_descripcion:      
+with tab_descripcion:      
 
     st.markdown('''
-    ## Plantilla Básica para Proyecto Integrador
-
     ### Introducción
-
-    -   ¿Qué es el proyecto?
-                RESERVAS DE SALAS DE ESTUDIO
-    -   ¿Cuál es el objetivo principal?
-    -   ¿Por qué es importante?
+    - ¿Qué es el proyecto?  
+      **RESERVAS DE SALAS DE ESTUDIO**
+    - ¿Cuál es el objetivo principal?  
+      **Optimización de las reservas**
+    - ¿Por qué es importante?  
+      **Facilitar la gestión de espacios**
 
     ### Desarrollo
-
-    -   Explicación detallada del proyecto
-    -   Procedimiento utilizado
-    -   Resultados obtenidos
+    - Explicación detallada del proyecto
+    - Procedimiento utilizado
+    - Resultados obtenidos
 
     ### Conclusión
-
     -   Resumen de los resultados
     -   Logros alcanzados
     -   Dificultades encontradas
     -   Aportes personales
-    ''')    
+    ''')  
+    
+with tab_Generador: 
+    st.write('Esta función genera datos ficticios de usuarios y los guarda en un archivo CSV.')
+   
+    # Inicializar Faker para Colombia
+
+    fake = Faker('es_CO')
+
+    # Lista de programas técnicos
+programas_tecnicos = [
+    'Técnico en Programación', 'Seguridad y Salud en el Trabajo', 
+    'Diseño Gráfico', 'Técnico en Contabilidad'
+]
+
+   # Función para generar usuarios ficticios
+def generate_fake_usuarios(n):
+    usuarios = []
+    for _ in range(n):
+        users = {
+            'Nombre': fake.name(),
+            'Edad': random.randint(18, 80),  # Generar edad aleatoria entre 18 y 80
+            'Programa de Estudio': random.choice(programas_tecnicos),
+            'Fecha de Reserva': fake.date_between(start_date='-30d', end_date='today'),
+            'Hora de Reserva': fake.time()
+        }
+        usuarios.append(users)
+        return usuarios
+    
+    st.subheader("Generar Usuarios Ficticios")
+
+  # Generar datos ficticios
+    num_users = st.number_input("Número de usuarios a generar:", min_value=1, max_value=100, value=60)
+    
+    # Variable para almacenar los usuarios generados
+fake_users = []  # Inicializa la variable antes de usarla
+
+if st.button("Generar Usuarios"):
+         fake_users = generate_fake_usuarios(num_users)
+         
+# Crear el DataFrame y mostrar datos generados
+df_fake = pd.DataFrame(fake_users)
+
+
+# Mostrar el DataFrame en Streamlit
+st.dataframe(df_fake)
+
+
+
+# Guardar el DataFrame en un archivo CSV
+df_fake.to_csv('C:/Users/Johny/Desktop/base/reserva_salas_estudio_60_usuarios.csv', index=False)
+st.success("Archivo CSV generado exitosamente.")
 
 #----------------------------------------------------------
-#Analítica 1
+#Análisis Exploratorio
 #----------------------------------------------------------
 with tab_Análisis_Exploratorio:    
     st.title("Análisis Exploratorio")
